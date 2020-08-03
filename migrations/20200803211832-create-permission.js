@@ -11,12 +11,12 @@ module.exports = {
       user_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: Users }
+        references: { model: "Users" }
       },
       board_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: Boards }
+        references: { model: "Boards" }
       },
       admin: {
         type: Sequelize.BOOLEAN
