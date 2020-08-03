@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Permission.init({
-    user_id: DataTypes.INTEGER
+    user_id: DataTypes.INTEGER,
+    board_id: DataTypes.INTEGER,
+    admin: DataTypes.BOOLEAN,
+    edit: DataTypes.BOOLEAN,
+    read: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Permission',

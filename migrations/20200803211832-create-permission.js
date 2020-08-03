@@ -9,7 +9,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       user_id: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: Users }
+      },
+      board_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: Boards }
+      },
+      admin: {
+        type: Sequelize.BOOLEAN
+      },
+      edit: {
+        type: Sequelize.BOOLEAN
+      },
+      read: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
