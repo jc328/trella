@@ -1,0 +1,33 @@
+body {
+  background-color: #ffffff;
+  /* margin: -10px 10px; */
+}
+
+#landing_nav_container {
+  background-color: #366FC3;
+  height: 60px;
+}
+
+.landing_nav_items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -10px 10px;
+}
+
+#nav_buttons {
+
+}
+
+#nav_text {
+  color: white;
+}
+
+#landing_splash_container {
+  background-color: #366FC3;
+  height: 300px;
+}
+
+#landing_splash_items {
+  display: flex;
+}
