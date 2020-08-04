@@ -31,3 +31,12 @@ body {
 #landing_splash_items {
   display: flex;
 }
+
+#landing_splash_image {
+  width: 25%;
+  height: 200px;
+}
+
+#landing_splash_text {
+  width: 40%;
+}
