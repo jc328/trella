@@ -25,11 +25,14 @@ body {
 
 #landing_splash_container {
   background-color: #366FC3;
-  height: 300px;
+  height: 350px;
 }
 
 #landing_splash_items {
   display: flex;
+  margin: 0 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 #landing_splash_image {
@@ -39,4 +42,22 @@ body {
 
 #landing_splash_text {
   width: 40%;
+  font-family: "Charlie Display",sans-serif;
+}
+
+#landing_splash_title {
+  color: white;
+  font-size: 1.5625rem;
+  font-weight: 300;
+}
+
+#landing_newUserSignup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+#landing_splash_signup {
+  margin-right: 10px;
 }

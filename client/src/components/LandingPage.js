@@ -1,6 +1,6 @@
 import React from 'react';
 import '/Users/johnchen/appAcademy/AppAcademy/16weekReactProject/trella/client/src/styles/landingPage.css'
-import { Button } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 
 const splash = require('../assets/loginSplash.svg')
 
@@ -24,17 +24,30 @@ function LandingPage () {
     <div id="landing_splash_container">
       <div id="landing_splash_items">
         <div id="landing_splash_text">
-          <h2 color="white">Trello lets you work more collaboratively and get more done.</h2>
+          <h2 id="landing_splash_title">Trello lets you work more collaboratively and get more done.</h2>
           <h3>Trello’s boards, lists, and cards enable you to organize and prioritize your projects in a fun, flexible, and rewarding way.</h3>
         </div>
         <div id="landing_splash_image">
           <img src={splash} alt={''} height="100%" />
         </div>
+      </div>
+      <div id="landing_newUserSignup">
         <div id="landing_splash_signup">
-
+          <TextField
+          variant="standard"
+          label="Email"
+          size="small"
+          required="true"
+          >Testing</TextField>
+        </div>
+        <div>
+          <Button variant="contained" color="primary" size="small" style={{ backgroundColor:"green", color:"white"}}>Sign Up - Its Free</Button>
         </div>
       </div>
-    </div>
+
+      </div>
+
+
 
   </>
   )
