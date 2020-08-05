@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const csurf = require('csurf');
 const cors = require('cors');
 // const fetch = require('node-fetch');
+const routes = require('./routes');
 const session = require('express-session');
 const { check, validationResult } = require('express-validator');
 
@@ -20,6 +21,7 @@ const asyncHandler = (handler) => (req, res, next) => handler(req, res, next).ca
 app.use(express.json());
 app.use(cors({ origin: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(routes);
 
 // const { user, board, card, list, permission } = require('./db/models');
 
@@ -39,12 +41,7 @@ app.get('/', asyncHandler(async (req, res, next) => {
 
 
 
-const port = Number.parseInt(process.env.PORT, 10) || 8080;
-
-app.listen(port, () => {
-  console.log(`Listening on port:${port}...`);
-});
-
+module.exports = app;
 
 //Notes
 // "start": "node ./bin/www",

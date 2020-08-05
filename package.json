@@ -37,7 +37,7 @@
     "model:generate": "sequelize-cli model:generate",
     "seed:generate": "sequelize-cli seed:generate",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client && npm run db:redo",
-    "start": "node app.js",
+    "start": "node ./bin/www",
     "dev": "nodemon -r dotenv/config ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
