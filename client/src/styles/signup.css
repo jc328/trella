@@ -1,0 +1,22 @@
+body {
+  background-color: #F9FAFC;
+}
+
+#login_images {
+  display: flex;
+  height: 200px;
+}
+
+#login_image_left {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 215px;
+}
+
+#login_image_right {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 215px;
+}

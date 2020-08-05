@@ -38,6 +38,7 @@ body {
 #landing_splash_image {
   width: 25%;
   height: 200px;
+  margin-left: 20px;
 }
 
 #landing_splash_text {
