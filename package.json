@@ -10,6 +10,7 @@
     "cors": "^2.8.5",
     "csurf": "^1.11.0",
     "dotenv": "^8.2.0",
+    "dotenv-cli": "^3.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "express-validator": "^6.6.1",
@@ -37,7 +38,7 @@
     "model:generate": "sequelize-cli model:generate",
     "seed:generate": "sequelize-cli seed:generate",
     "heroku-postbuild": "npm install --prefix client && npm run build --prefix client && npm run db:redo",
-    "start": "node ./bin/www",
+    "start": "dotenv ./bin/www",
     "dev": "nodemon -r dotenv/config ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

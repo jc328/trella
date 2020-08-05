@@ -2,15 +2,15 @@
 
 const app = require('../app');
 const port = Number.parseInt(process.env.PORT, 10) || 8000
-// const db = require('../db/models')
+const db = require('../db/models')
 
-// db.sequelize.authenticate()
-//     .then(() => {
-//         app.listen(port, () => console.log(`App now listening on port # ${port}...`))
-//     })
-//     .catch((error) => {
-//         console.log('Unable to connect to the database.')
-//         console.error(error)
-//     });
+db.sequelize.authenticate()
+    .then(() => {
+        app.listen(port, () => console.log(`App now listening on port # ${port}...`))
+    })
+    .catch((error) => {
+        console.log('Unable to connect to the database.')
+        console.error(error)
+    });
 
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+// app.listen(port, () => console.log(`Listening on port ${port}...`));
