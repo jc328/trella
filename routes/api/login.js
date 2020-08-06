@@ -29,7 +29,7 @@ router.post('/', asyncHandler(async (req, res) => {
     } else {
       const token = getUserToken(user);
       const id = user.id;
-      res.json({ token, user: { id: id } });
+      res.json({ token, user: { id } });
     }
 
   }));

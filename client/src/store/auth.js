@@ -4,7 +4,6 @@ const TRELLA_TOKEN = 'TRELLA_TOKEN';
 const SET_TOKEN = 'trella/authentication/SET_TOKEN';
 const REMOVE_TOKEN = 'trella/authentication/REMOVE_TOKEN';
 
-
 export const removeToken = token => ({ type: REMOVE_TOKEN });
 export const setToken = token => ({ type: SET_TOKEN, token });
 
@@ -18,8 +17,9 @@ export const signIn = (email, password) => async dispatch => {
     if (!response.ok) {
       throw response;
     } else {
-      const { token } = await response.json();
+      const { token, user } = await response.json();
       localStorage.setItem(TRELLA_TOKEN, token);
+      console.log(user.id)
       dispatch(setToken(token));
     }
 
@@ -28,6 +28,10 @@ export const signIn = (email, password) => async dispatch => {
     console.error(err);
   }
 }
+
+
+
+
 
 export const signUp = (name, email, password) => async dispatch => {
   try {
@@ -53,6 +57,34 @@ export const signOut = () => async dispatch => {
   console.log('signed out')
   dispatch(removeToken());
 }
+
+export const loadDashboard = (id = 1) => async dispatch => {
+  try {
+    const response = await fetch(`${baseUrl}/dashboard/${id}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id }),
+    });
+    if (!response.ok) {
+      throw response;
+    } else {
+      const { data } = await response.json();
+      console.log(data)
+
+    }
+  }
+  catch (err) {
+    console.error(err);
+  }
+}
+
+
+
+
+
+
+
+
 
 
 export default function reducer(state = { needSignIn: true }, action) {

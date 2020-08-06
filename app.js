@@ -4,17 +4,13 @@ const bodyParser = require('body-parser');
 const csurf = require('csurf');
 const cors = require('cors');
 
-
 const session = require('express-session');
 const { check, validationResult } = require('express-validator');
-// const cookieParser = require('cookie-parser');
-// const session = require('express-session');
-// const fetch = require('node-fetch');
 
-// const routes = require('./routes');
 const sessionRouter = require('./routes/api/login.js')
 const signUpRouter = require('./routes/api/signup.js')
 const loginRouter = require('./routes/api/login.js')
+const dashboardRouter = require('./routes/api/dashboard.js')
 
 
 
@@ -33,6 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/session", sessionRouter)
 app.use("/signup", signUpRouter)
 app.use("/login", loginRouter)
+app.use("/dashboard", dashboardRouter)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

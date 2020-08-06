@@ -1,12 +1,13 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
-import auth, {signIn} from './auth'
+import auth, {signIn, loadDashboard} from './auth'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const reducer = combineReducers({
   signIn,
-  auth
+  auth,
+  loadDashboard
 });
 
 const configureStore = (initialState) => {

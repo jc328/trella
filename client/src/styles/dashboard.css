@@ -1,0 +1,22 @@
+.dashboard_list {
+  width: 250px;
+  background-color: #b8bac5;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.list_title {
+  width: 250px;
+  background-color: #dddee2;
+  margin-left: 10px;
+  margin-top: 10px;
+  flex-grow: 1;
+}
+
+.listopen_container {
+  display: flex;
+}
+
+.input_title:focus {
+  background-color: green;
+}

@@ -2,24 +2,28 @@ import React, { useState } from 'react';
 import SignupElement from './SignupElement';
 import '../styles/newuser.css'
 import { Button, TextField } from '@material-ui/core';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { signUp } from '../store/auth';
+import { Redirect } from 'react-router-dom';
 
 function NewUser () {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const dispatch = useDispatch();
-
+  const { needSignIn } = useSelector(state => state.auth)
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
     dispatch(signUp(name, email, password));
+  }
+  if (!needSignIn) {
+    return <Redirect to="/landingpage" />
   }
 
   return (
     <>
-
     <div id="signup_container">
       <div id="signup_box">
         <h5 id="signup_title">

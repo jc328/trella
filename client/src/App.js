@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import Login from './components/LoginPage';
 import NewUser from './components/NewUser';
+import dashboard from './components/dashboard';
 
 
 export default () => {
@@ -13,6 +14,7 @@ export default () => {
       <Route path="/login" exact component={Login} />
       <Route path="/signup" exact component={NewUser} />
       <Route path="/landingPage" exact component={Navbar} />
+      <Route path="/dashboard" exact component={dashboard} />
     </Switch>
   )
 }
