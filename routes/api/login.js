@@ -4,7 +4,7 @@ const { User } = require('../../db/models')
 const cookieParser = require('cookie-parser');
 
 const { getUserToken, requireAuth } = require('./security-utils');
-const { asyncHandler, handleValidationErrors, emailNotUnique, validateEmailAndPassword } = require('../../utils');
+const { asyncHandler } = require('../../utils');
 
 router.use(requireAuth);
 router.use(cookieParser());

@@ -17,7 +17,6 @@ function NewUser () {
     dispatch(signUp(name, email, password));
   }
 
-
   return (
     <>
 

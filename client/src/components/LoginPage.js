@@ -13,12 +13,13 @@ function Login () {
 // need sign in authentication
   const { needSignIn } = useSelector(state => state.auth)
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch(signIn(email, password));
   }
 
-  if (!needSignIn) {
+  if (needSignIn === false) {
     return <Redirect to="/landingpage" />
   }
 

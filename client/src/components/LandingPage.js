@@ -8,6 +8,7 @@ const splash = require('../assets/loginSplash.svg')
 function LandingPage () {
 
 
+
   return (
     <>
     <div id="landing_nav_container">
