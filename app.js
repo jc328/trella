@@ -4,17 +4,19 @@ const bodyParser = require('body-parser');
 const csurf = require('csurf');
 const cors = require('cors');
 
+
+const session = require('express-session');
+const { check, validationResult } = require('express-validator');
 // const cookieParser = require('cookie-parser');
 // const session = require('express-session');
 // const fetch = require('node-fetch');
 
 // const routes = require('./routes');
 const sessionRouter = require('./routes/api/login.js')
-const userRouter = require('./routes/api/user.js')
+const signUpRouter = require('./routes/api/signup.js')
+const loginRouter = require('./routes/api/login.js')
 
-// const { User } = require('./db/models')
 
-const { check, validationResult } = require('express-validator');
 
 // const bcrypt = require('bcrypt');
 // const saltRounds = 10;
@@ -27,12 +29,10 @@ const asyncHandler = (handler) => (req, res, next) => handler(req, res, next).ca
 app.use(express.json());
 app.use(cors({ origin: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(routes);
 
 app.use("/session", sessionRouter)
-app.use("/users", userRouter)
-
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use("/signup", signUpRouter)
+app.use("/login", loginRouter)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
@@ -46,15 +46,6 @@ app.get('/', asyncHandler(async (req, res) => {
   res.json(list);
 }));
 
-app.get('/users', asyncHandler(async (req, res) => {
-  const user = await User.findAll({
-    attributes: ["name, email, password"],
-    // where: {
-    //   'fullName' : req.body.search,
-    // }
-  })
-  console.log(user)
-}));
 
 
 
