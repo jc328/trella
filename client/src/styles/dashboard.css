@@ -8,15 +8,13 @@
 .list_title {
   width: 250px;
   background-color: #dddee2;
-  margin-left: 10px;
-  margin-top: 10px;
-  flex-grow: 1;
+  margin: 50px;
+  /* margin-left: 20px;
+  margin-top: 10px; */
+  /* flex-grow: 1; */
 }
 
 .listopen_container {
   display: flex;
-}
-
-.input_title:focus {
-  background-color: green;
+  background-color: #dddee2;
 }

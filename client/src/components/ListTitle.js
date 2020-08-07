@@ -7,12 +7,18 @@ export default function ListTitle() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <div>
+    <div >
       {menu ? (
               <div>
                 <InputBase
-                value="Title"
+                value="Test"
                 className="input_Title"
+
+                style={{
+                  backgroundColor:"lightgrey",
+                  marginLeft: 10,
+
+                }}
                 onBlur = {() => setMenu(!menu)}
                 />
               </div>
@@ -20,6 +26,10 @@ export default function ListTitle() {
         <div className="listopen_container">
           <Typography
           onClick={() => setMenu(!menu) }
+          style={{
+            marginLeft: 10,
+            fontWeight: 'bold',
+          }}
           className="list_title"
           >Title</Typography>
           <MoreHorizIcon />
