@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       Board.hasMany(models.List, { foreignKey: 'board_id'})
       Board.hasMany(models.Permission, { foreignKey: 'board_id'})
 
-      Board.belongsTo(models.User, { foreignKey: 'board_id'})
+      Board.belongsTo(models.User, { foreignKey: 'user_id'})
     }
   };
   Board.init({
