@@ -10,6 +10,7 @@ router.use(requireAuth);
 router.use(cookieParser());
 
 router.post('/', asyncHandler(async (req, res) => {
+
     const { id } = req.body;
     let boardDataArr = []
     let listDataArr = []
@@ -38,9 +39,7 @@ router.post('/', asyncHandler(async (req, res) => {
         list_id: listDataArr
       }
     })
-
       res.json({ cardData, listData, boardData });
   }));
-
 
 module.exports = router;

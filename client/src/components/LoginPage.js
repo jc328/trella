@@ -20,7 +20,7 @@ function Login () {
   }
 
   if (needSignIn === false) {
-    return <Redirect to="/landingpage" />
+    return <Redirect to="/Dashboard" />
   }
 
   return (

@@ -1,9 +1,12 @@
 import { baseUrl } from '../config';
 
 const RETRIEVE_DATA = ''
-export const retrieveData = (allCards) => ({ type: RETRIEVE_DATA, allCards });
+export const retrieveData = (allCards) => ({ type: RETRIEVE_DATA, allCards })
+export const loadDashboard = ( id ) => async dispatch => {
 
-export const loadDashboard = (id = 1) => async dispatch => {
+  if (!id) {
+    return
+  }
 
   try {
     const response = await fetch(`${baseUrl}/dashboard/`, {

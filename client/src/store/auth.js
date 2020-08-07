@@ -1,4 +1,5 @@
 import { baseUrl } from '../config';
+import { loadDashboard } from '../store/dashboard';
 
 const TRELLA_TOKEN = 'TRELLA_TOKEN';
 const SET_TOKEN = 'trella/authentication/SET_TOKEN';
@@ -19,7 +20,7 @@ export const signIn = (email, password) => async dispatch => {
     } else {
       const { token, user } = await response.json();
       localStorage.setItem(TRELLA_TOKEN, token);
-      console.log(user.id)
+      dispatch(loadDashboard(user.id))
       dispatch(setToken(token));
     }
 
@@ -28,10 +29,6 @@ export const signIn = (email, password) => async dispatch => {
     console.error(err);
   }
 }
-
-
-
-
 
 export const signUp = (name, email, password) => async dispatch => {
   try {
