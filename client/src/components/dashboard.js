@@ -4,12 +4,17 @@ import '../styles/dashboard.css'
 import ListTitle from './ListTitle';
 import Card from './Card'
 import InputCard from './InputCard';
+import Lists from './Lists'
+import { useDispatch } from 'react-redux'
+import {loadDashboard} from '../store/dashboard';
 
-
-function dashboard () {
+function Dashboard () {
+  const dispatch = useDispatch();
+  dispatch(loadDashboard())
 
   return (
     <>
+    <Lists />
     <Paper
     className="dashboard_list"
     style={{backgroundColor:"#dddee2"}}
@@ -26,4 +31,4 @@ function dashboard () {
     )
   }
 
-export default dashboard;
+export default Dashboard;

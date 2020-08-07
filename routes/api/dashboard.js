@@ -9,14 +9,14 @@ const { asyncHandler } = require('../../utils');
 router.use(requireAuth);
 router.use(cookieParser());
 
-router.get('/', asyncHandler(async (req, res) => {
+router.post('/', asyncHandler(async (req, res) => {
     const { id } = req.body;
     let boardDataArr = []
     let listDataArr = []
 
     const boardData = await Board.findAll({
       where: {
-        user_id : 1
+        user_id : id
       },
     });
     for (x of boardData) {
@@ -25,7 +25,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
     const listData = await List.findAll ({
       where: {
-        board_id: [...boardDataArr]
+        board_id: boardDataArr
       }
     })
 
@@ -35,7 +35,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
     const cardData = await Card.findAll ({
       where: {
-        list_id: [...listDataArr]
+        list_id: listDataArr
       }
     })
 
