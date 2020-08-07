@@ -4,6 +4,7 @@ const { User } = require('../../db/models')
 const csurf = require('csurf');
 const csrfProtection = csurf({ cookie: true });
 const cookieParser = require('cookie-parser');
+const { asyncHandler } = require('../../utils');
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -12,8 +13,6 @@ const { getUserToken, requireAuth } = require('./security-utils');
 
 router.use(requireAuth);
 router.use(cookieParser());
-
-const asyncHandler = (handler) => (req, res, next) => handler(req, res, next).catch(next);
 
 router.post('/', asyncHandler(async (req, res) => {
     const { name, email, password } = req.body;

@@ -11,11 +11,7 @@ const sessionRouter = require('./routes/api/login.js')
 const signUpRouter = require('./routes/api/signup.js')
 const loginRouter = require('./routes/api/login.js')
 const dashboardRouter = require('./routes/api/dashboard.js')
-
-
-
-// const bcrypt = require('bcrypt');
-// const saltRounds = 10;
+const updateCardRouter = require('./routes/api/updateCard.js')
 
 const app = express();
 const csrfProtection = csurf({ cookie : true });
@@ -30,6 +26,7 @@ app.use("/session", sessionRouter)
 app.use("/signup", signUpRouter)
 app.use("/login", loginRouter)
 app.use("/dashboard", dashboardRouter)
+app.use("/updateCard", updateCardRouter)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
