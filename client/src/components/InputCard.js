@@ -5,8 +5,8 @@ import InputForm from './InputForm';
 export default function InputCard() {
   const [menu, setMenu] = useState(false)
 
-  return <div>
-
+  return (
+    <div>
     <Collapse in={menu}>
       <InputForm setMenu={setMenu} />
     </Collapse>
@@ -20,9 +20,9 @@ export default function InputCard() {
         }}
         className = "add_card_title"
         onClick = {() => setMenu(!menu)}
-        >
-          + Add a Card
+        > + Add a Card
       </Button>
     </Collapse>
   </div>
+  )
 }
