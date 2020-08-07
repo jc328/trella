@@ -17,9 +17,9 @@ function Dashboard () {
   const handleClick = () => {
     dispatch(loadDashboard(2))
   }
-  // if (cards) {
-  //   console.log('loadDash', cards[0].id)
-  // }
+  if (cards) {
+    console.log('loadDash', cardData)
+  }
 
   return (
     <>

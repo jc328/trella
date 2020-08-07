@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Paper, InputBase, Button, IconButton } from '@material-ui/core'
 import ClearIcon from '@material-ui/icons/Clear'
 
 export default function InputForm({ setMenu }) {
+  const [title, setTitle] = useState('')
 
   return (
     <div>
@@ -14,7 +15,9 @@ export default function InputForm({ setMenu }) {
         <InputBase
           multiline
           fullWidth
+          onChange = {(e) => {setTitle(e.target.value)}}
           placeholder="Enter a title for this card..."
+          value={title}
           onBlur = {() => setMenu(false)}
           />
       </Paper>
