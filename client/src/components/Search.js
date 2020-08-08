@@ -17,8 +17,7 @@ function Search () {
        marginLeft: 10,
        fontSize: 10,
        height: 20,
-       backgroundColor: 'lightblue',
-
+       backgroundColor: '#919A9D',
      }}
     }
     // label="search"

@@ -7,7 +7,10 @@ body {
   justify-content: space-around;
   height: 20px;
     /* justify-content: center; */
-  background-color: hsl(197, 72%, 29%)
+  /* background-color: #29a1c2; */
+  /* position: fixed; */
+  top: 0
+
 }
 
 .searchfield {
@@ -24,15 +27,18 @@ body {
   height: 20px;
   font-size: small;
   /* background-color: green; */
+  opacity: 0.8;
 }
 
 .navbar_center {
+
   position: fixed;
   left: 400px;
   font-family: "Charlie Display",sans-serif;
 }
 
 .navbar_right {
+  opacity: 0.8;
   width: 20%;
   display: flex;
   position: fixed;

@@ -5,6 +5,7 @@ html, body {
 #signup_container {
   display: grid;
   justify-content: center;
+  z-index: 1;
 }
 
 p {

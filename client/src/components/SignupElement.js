@@ -11,7 +11,7 @@ function SignupElement () {
     <>
     <div id="login_images">
       <div id="login_image_left">
-        <img src={loginLeft} alt={''} height="100%"  />
+        <img src={loginLeft} alt={''} height="100%" />
       </div>
       <div id="login_image_right">
         <img src={loginRight} alt={''} height="100%" />

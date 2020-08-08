@@ -6,19 +6,23 @@ import { addCard, loadDashboard } from '../store/dashboard';
 
 
 export default function InputForm({ setMenu }) {
+  const [list, setList] = useState('')
   const cardData = useSelector(state => state.retrieveData)
   let { cardData:{ boardData: userId } } = cardData
+
   if (userId) {
     console.log(userId[0].user_id)
+    console.log('data loaded', cardData)
   }
   const [title, setTitle] = useState('')
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(addCard(title, 4))
-
+    // dispatch(addCard(title, 4))
+    console.log(cardData)
     // To test if we can update card list on click
-    dispatch(loadDashboard(userId[0].user_id))
+    // dispatch(loadDashboard(userId[0].user_id))
+    dispatch(loadDashboard(1))
   }
 
   return (
@@ -35,7 +39,6 @@ export default function InputForm({ setMenu }) {
           placeholder="Enter a title for this card..."
           value={title}
           onBlur = {() => setMenu(false)}
-
           />
       </Paper>
       </div>
@@ -44,7 +47,8 @@ export default function InputForm({ setMenu }) {
         onClick = {() => {handleClick()}}
         style={{
           backgroundColor:"green",
-          marginLeft: 10
+          marginLeft: 10,
+          opacity: .7
         }}
 
         >Add Card</Button>

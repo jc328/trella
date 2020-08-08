@@ -21,10 +21,10 @@ function NewUser () {
   if (!needSignIn) {
     return <Redirect to="/dashboard" />
   }
-  console.log(needSignIn)
+
   return (
     <>
-    <div id="signup_container">
+    <div id="signup_container" style={{zIndex: 1}}>
       <div id="signup_box">
         <h5 id="signup_title">
           Sign up for your account

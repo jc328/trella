@@ -13,10 +13,11 @@ import Navbar from './Navbar';
 function Dashboard () {
   const cardData = useSelector(state => state.retrieveData)
   let { cardData:{ cardData: cards } } = cardData
+  let { cardData:{ boardData: userId } } = cardData
 
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(loadDashboard(2))
+    dispatch(loadDashboard(userId[0].user_id))
   }
   // if (cards) {
   //   console.log('loadDash', cardData)
