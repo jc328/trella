@@ -19,9 +19,9 @@ function NewUser () {
     dispatch(signUp(name, email, password));
   }
   if (!needSignIn) {
-    return <Redirect to="/landingpage" />
+    return <Redirect to="/dashboard" />
   }
-
+  console.log(needSignIn)
   return (
     <>
     <div id="signup_container">

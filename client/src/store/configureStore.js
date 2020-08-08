@@ -10,7 +10,7 @@ const reducer = combineReducers({
   signIn,
   auth,
   loadDashboard,
-  retrieveData
+  retrieveData,
 });
 
 const configureStore = (initialState) => {

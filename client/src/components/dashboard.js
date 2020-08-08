@@ -6,8 +6,9 @@ import Card from './Card'
 import InputCard from './InputCard';
 import { useSelector, useDispatch } from 'react-redux'
 import { loadDashboard } from '../store/dashboard';
+import Navbar from './Navbar';
 
-//REMOVE LOAD DATA BUTTON
+// *** REMOVE LOAD DATA BUTTON ***
 
 function Dashboard () {
   const cardData = useSelector(state => state.retrieveData)
@@ -17,12 +18,13 @@ function Dashboard () {
   const handleClick = () => {
     dispatch(loadDashboard(2))
   }
-  if (cards) {
-    console.log('loadDash', cardData)
-  }
+  // if (cards) {
+  //   console.log('loadDash', cardData)
+  // }
 
   return (
     <>
+    <Navbar />
     <Paper
     className="dashboard_list"
     style={{backgroundColor:"#dddee2"}}
