@@ -13,7 +13,7 @@ import Navbar from './Navbar';
 function Dashboard () {
   const cardData = useSelector(state => state.retrieveData)
   let { cardData:{ cardData: cards } } = cardData
-  let { cardData:{ boardData: userId } } = cardData
+  // let { cardData:{ boardData: userId } } = cardData
   let { cardData:{ listData: list_id } } = cardData
   let { cardData:{ boardData: board_id } } = cardData
 
@@ -26,9 +26,7 @@ function Dashboard () {
     for (let x of list_id) {
       if (x.board_id === firstBoard.id) {
         listArr.push(x)
-      }
-   }
-  }
+    }}}
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -36,14 +34,16 @@ function Dashboard () {
     dispatch(loadDashboard(2))
   }
 
-  console.log("listArr", listArr)
+  // console.log("listArr", listArr)
 
-  if (cards) {
-    console.log('cardData', cards)
-    // console.log('list_id', list_id)
-    // console.log('userId', userId)
-    // console.log('board_id', firstBoard )
-  }
+  // if (!cards) {
+  //   // console.log('cardData', cards)
+  //   // console.log('list_id', list_id)
+  //   // console.log('userId', userId)
+  //   // console.log('board_id', firstBoard )
+  //   return <>
+  //   </>
+  // }
 
   return (
     <>
@@ -51,39 +51,25 @@ function Dashboard () {
     <div style={{display:"flex", justifyContent:"center"}}>
     {listArr.map((list, idx) => {
 
-      if (cards) {
       return (
           <Paper
           className="dashboard_list"
           style={{backgroundColor:"#dddee2"}}
           key={idx}
           >
-            <ListTitle title={list.title}/>
-            {/* {cards ? cards.map((card, idx) => <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>) : ''} */}
-
-
-            {cards.map((card, idx) => (card.list_id === list.id) ? <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>: console.log(card.list_id, list.id))}
-
-
-
-
+            <ListTitle title={list.title} listIndex={idx}/>
+            {cards.map((card, idx) => (card.list_id === list.id) ? <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>: null)}
             <InputCard list_id={list.id} />
-
           </Paper>
       )}
-    })}
+    )}
     </div>
-
-
     <Button variant="outlined" onClick={handleClick}>Load Data</Button>
     </>
     )
-
   }
-
   Dashboard.defaultProps = {
     cards: {}
   }
-
 
 export default Dashboard;

@@ -6,7 +6,7 @@ import { addCard, loadDashboard } from '../store/dashboard';
 
 
 export default function InputForm({ setMenu, list_id }) {
-  const [list, setList] = useState('')
+  // const [list, setList] = useState('')
   const cardData = useSelector(state => state.retrieveData)
   let { cardData:{ boardData: userId } } = cardData
 
@@ -21,6 +21,7 @@ export default function InputForm({ setMenu, list_id }) {
   const handleClick = () => {
     dispatch(addCard(title, list_id))
     dispatch(loadDashboard(userId[0].user_id))
+    setTitle('')
   }
 
   return (

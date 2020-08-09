@@ -28,10 +28,10 @@ function Navbar ({title}) {
   return (
     <div className="navbar">
       <div className="navbar_left">
-        <IconButton onClick={console.log('Setup Menu Item')}>
+        <IconButton >
         <AppsIcon style={{ fill: 'white', backgroundColor: '#919A9D', height: 18, marginBottom: 4, borderRadius: 3}}/>
         </IconButton>
-        <IconButton onClick={console.log('Setup Home Button')}>
+        <IconButton >
         <HomeOutlinedIcon style={{ fill: 'white', backgroundColor: '#919A9D', height: 18, marginBottom: 4, borderRadius: 3}}/>
         </IconButton>
 
