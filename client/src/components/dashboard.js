@@ -38,13 +38,13 @@ function Dashboard () {
 
   // console.log("listArr", listArr)
 
-  // if (!cards) {
-  //   // console.log('cardData', cards)
+  // if (cards) {
+  //   console.log('cardData', cards[0].id)
   //   // console.log('list_id', list_id)
   //   // console.log('userId', userId)
   //   // console.log('board_id', firstBoard )
-  //   return <>
-  //   </>
+  //   // return <>
+  //   // </>
   // }
 
   return (
@@ -55,22 +55,24 @@ function Dashboard () {
     {listArr.map((list, idx) => {
 
       return (
-        <DragDropContext>
+        <DragDropContext key={idx}>
         <Grow in={true} style={{ transformOrigin: '0 0 0' }}>
           <Paper
           className="dashboard_list"
           style={{backgroundColor:"#dddee2"}}
           key={idx}
-          ><Droppable droppableId={list.id}>
-            {() => (
-              <div>
+          ><Droppable droppableId={list.id.toString()}>
+            {(provided) => (
+              <div ref={provided.innerRef} {...provided.droppableProps}>
                 <ListTitle title={list.title} listIndex={idx}/>
-              {cards.map((card, idx) => (card.list_id === list.id) ? <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>: null)}
-              <InputCard list_id={list.id} />
+              {cards.map((card, idx) => (card.list_id === list.id) ? <Card key={card.id} card_id={card.id} index={idx} cardTitle={card.title} list_id={card.list_id}/>: null)}
+
+              {provided.placeholder}
               </div>
             )}
 
           </Droppable>
+          <InputCard list_id={list.id} />
           </Paper>
         </Grow>
         </DragDropContext>
