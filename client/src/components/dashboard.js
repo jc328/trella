@@ -39,7 +39,7 @@ function Dashboard () {
   console.log("listArr", listArr)
 
   if (cards) {
-    // console.log('cardData', cards)
+    console.log('cardData', cards)
     // console.log('list_id', list_id)
     // console.log('userId', userId)
     // console.log('board_id', firstBoard )
@@ -50,6 +50,8 @@ function Dashboard () {
     <Navbar title={firstBoard.title}/>
     <div style={{display:"flex", justifyContent:"center"}}>
     {listArr.map((list, idx) => {
+
+      if (cards) {
       return (
           <Paper
           className="dashboard_list"
@@ -57,11 +59,18 @@ function Dashboard () {
           key={idx}
           >
             <ListTitle title={list.title}/>
-            {cards ? cards.map((card, idx) => <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>) : ''}
+            {/* {cards ? cards.map((card, idx) => <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>) : ''} */}
+
+
+            {cards.map((card, idx) => (card.list_id === list.id) ? <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>: console.log(card.list_id, list.id))}
+
+
+
+
             <InputCard list_id={list.id} />
 
           </Paper>
-      )
+      )}
     })}
     </div>
 
