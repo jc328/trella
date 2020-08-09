@@ -23,8 +23,8 @@ function Dashboard () {
   }
 
   if (cards) {
-    // console.log('cardData', cardData)
-    console.log('listData', list_id)
+    console.log('cardData', cardData)
+    // console.log('listData', list_id)
   }
 
   return (
