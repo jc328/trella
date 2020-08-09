@@ -15,7 +15,7 @@ function LandingPage () {
     <div id="landing_nav_container">
       <div className="landing_nav_items">
         <div>
-          <img src={logo} alt="" style={{height:90, marginLeft:5}}/>
+          <img src={logo} alt="" style={{height:90, marginLeft:10}}/>
         </div>
         <div id="nav_buttons">
         <NavLink to="/login" style={{ textDecoration:"none"}}>
