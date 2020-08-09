@@ -10,10 +10,10 @@ export default function InputForm({ setMenu }) {
   const cardData = useSelector(state => state.retrieveData)
   let { cardData:{ boardData: userId } } = cardData
 
-  if (userId) {
-    console.log(userId[0].user_id)
-    console.log('data loaded', cardData)
-  }
+  // if (userId) {
+  //   console.log(userId[0].user_id)
+  //   console.log('data loaded', cardData)
+  // }
   const [title, setTitle] = useState('')
   const dispatch = useDispatch();
 

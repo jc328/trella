@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import Login from './components/LoginPage';
 import NewUser from './components/NewUser';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/dashboard';
 
 
 export default () => {

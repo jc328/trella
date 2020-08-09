@@ -9,7 +9,7 @@ import { Redirect } from 'react-router-dom';
 import '../styles/navbar.css'
 import logo from '../assets/logo.png'
 
-function Navbar () {
+function Navbar ({title}) {
   const { needSignIn } = useSelector(state => state.auth)
   const dispatch = useDispatch();
 
@@ -41,7 +41,7 @@ function Navbar () {
 
       <div className="navbar_center"><img src={logo} alt="" style={{height: 59, position:"fixed", top:-20}} /></div>
       <div className="navbar_right">
-        <div>Menu</div>
+        <div>{title}</div>
         <Button
         variant="contained"
         onClick={handleClick}

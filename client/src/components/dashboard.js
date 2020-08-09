@@ -15,6 +15,21 @@ function Dashboard () {
   let { cardData:{ cardData: cards } } = cardData
   let { cardData:{ boardData: userId } } = cardData
   let { cardData:{ listData: list_id } } = cardData
+  let { cardData:{ boardData: board_id } } = cardData
+
+  var firstBoard = ''
+  let listArr = [];
+
+  if (board_id) {
+    firstBoard = board_id[0]
+
+    for (let x of list_id) {
+      if (x.board_id === firstBoard.id) {
+        listArr.push(x)
+      console.log(x)
+      }
+   }
+  }
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -22,20 +37,24 @@ function Dashboard () {
     dispatch(loadDashboard(1))
   }
 
+  console.log("listArr", listArr)
+
   if (cards) {
     // console.log('cardData', cardData)
-    console.log('listData', list_id)
+    console.log('list_id', list_id)
+    // console.log('userId', userId)
+    console.log('board_id', firstBoard )
   }
 
   return (
     <>
-    <Navbar />
+    <Navbar title={firstBoard.title}/>
     <Paper
     className="dashboard_list"
     style={{backgroundColor:"#dddee2"}}
     >
       <ListTitle />
-      {cards ? cards.map((card, idx) => <Card key={card.id} cardTitle={card.title}/>) : ''}
+      {cards ? cards.map((card, idx) => <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>) : ''}
       <InputCard />
 
     </Paper>
