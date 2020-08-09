@@ -5,7 +5,7 @@ import ClearIcon from '@material-ui/icons/Clear'
 import { addCard, loadDashboard } from '../store/dashboard';
 
 
-export default function InputForm({ setMenu }) {
+export default function InputForm({ setMenu, list_id }) {
   const [list, setList] = useState('')
   const cardData = useSelector(state => state.retrieveData)
   let { cardData:{ boardData: userId } } = cardData
@@ -14,14 +14,13 @@ export default function InputForm({ setMenu }) {
   //   console.log(userId[0].user_id)
   //   console.log('data loaded', cardData)
   // }
+
   const [title, setTitle] = useState('')
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(addCard(title, 4))
-    // To test if we can update card list on click
+    dispatch(addCard(title, list_id))
     dispatch(loadDashboard(userId[0].user_id))
-    // dispatch(loadDashboard(1))
   }
 
   return (

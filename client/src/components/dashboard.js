@@ -26,7 +26,6 @@ function Dashboard () {
     for (let x of list_id) {
       if (x.board_id === firstBoard.id) {
         listArr.push(x)
-      console.log(x)
       }
    }
   }
@@ -34,16 +33,16 @@ function Dashboard () {
   const dispatch = useDispatch();
   const handleClick = () => {
     // dispatch(loadDashboard(userId[0].user_id))
-    dispatch(loadDashboard(1))
+    dispatch(loadDashboard(2))
   }
 
   console.log("listArr", listArr)
 
   if (cards) {
-    // console.log('cardData', cardData)
-    console.log('list_id', list_id)
+    // console.log('cardData', cards)
+    // console.log('list_id', list_id)
     // console.log('userId', userId)
-    console.log('board_id', firstBoard )
+    // console.log('board_id', firstBoard )
   }
 
   return (
@@ -59,7 +58,7 @@ function Dashboard () {
           >
             <ListTitle title={list.title}/>
             {cards ? cards.map((card, idx) => <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>) : ''}
-            <InputCard />
+            <InputCard list_id={list.id} />
 
           </Paper>
       )

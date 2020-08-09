@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import { Button, Collapse } from '@material-ui/core';
 import InputForm from './InputForm';
 
-export default function InputCard() {
+export default function InputCard({list_id}) {
   const [menu, setMenu] = useState(false)
 
   return (
     <div>
     <Collapse in={menu}>
-      <InputForm setMenu={setMenu} />
+      <InputForm setMenu={setMenu} list_id={list_id}/>
     </Collapse>
     <Collapse in={!menu}>
       <Button style={{
