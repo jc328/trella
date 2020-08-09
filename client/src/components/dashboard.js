@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { loadDashboard } from '../store/dashboard';
 import Navbar from './Navbar';
 import Grow from '@material-ui/core/Grow';
+import {DragDropContext, Droppable} from 'react-beautiful-dnd'
 
 // *** REMOVE LOAD DATA BUTTON ***
 
@@ -54,17 +55,25 @@ function Dashboard () {
     {listArr.map((list, idx) => {
 
       return (
+        <DragDropContext>
         <Grow in={true} style={{ transformOrigin: '0 0 0' }}>
           <Paper
           className="dashboard_list"
           style={{backgroundColor:"#dddee2"}}
           key={idx}
-          >
-            <ListTitle title={list.title} listIndex={idx}/>
-            {cards.map((card, idx) => (card.list_id === list.id) ? <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>: null)}
-            <InputCard list_id={list.id} />
+          ><Droppable droppableId={list.id}>
+            {() => (
+              <div>
+                <ListTitle title={list.title} listIndex={idx}/>
+              {cards.map((card, idx) => (card.list_id === list.id) ? <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>: null)}
+              <InputCard list_id={list.id} />
+              </div>
+            )}
+
+          </Droppable>
           </Paper>
         </Grow>
+        </DragDropContext>
       )}
 
     )}
