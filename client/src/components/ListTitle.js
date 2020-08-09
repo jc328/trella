@@ -3,7 +3,7 @@ import { InputBase, Typography } from '@material-ui/core';
 import '../styles/dashboard.css'
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
 
-export default function ListTitle() {
+export default function ListTitle({title}) {
 
   const [menu, setMenu] = useState(false);
 
@@ -29,7 +29,7 @@ export default function ListTitle() {
             fontWeight: 'bold',
           }}
           className="list_title"
-          >Title</Typography>
+          >{title}</Typography>
           <MoreHorizIcon />
         </div>
             )}

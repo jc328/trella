@@ -49,15 +49,24 @@ function Dashboard () {
   return (
     <>
     <Navbar title={firstBoard.title}/>
-    <Paper
-    className="dashboard_list"
-    style={{backgroundColor:"#dddee2"}}
-    >
-      <ListTitle />
-      {cards ? cards.map((card, idx) => <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>) : ''}
-      <InputCard />
+    <div style={{display:"flex", justifyContent:"center"}}>
+    {listArr.map((list, idx) => {
+      return (
+          <Paper
+          className="dashboard_list"
+          style={{backgroundColor:"#dddee2"}}
+          key={idx}
+          >
+            <ListTitle title={list.title}/>
+            {cards ? cards.map((card, idx) => <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>) : ''}
+            <InputCard />
 
-    </Paper>
+          </Paper>
+      )
+    })}
+    </div>
+
+
     <Button variant="outlined" onClick={handleClick}>Load Data</Button>
     </>
     )
