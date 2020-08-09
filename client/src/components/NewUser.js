@@ -6,8 +6,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { signUp } from '../store/auth';
 import { Redirect } from 'react-router-dom';
 
-function NewUser () {
-  const [email, setEmail] = useState('');
+function NewUser (props) {
+  // console.log()
+  var receiveEmail= ''
+  if (props.location.state) {
+    receiveEmail = props.location.state.landingEmail
+  }
+  console.log(receiveEmail)
+  const [email, setEmail] = useState(receiveEmail);
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const dispatch = useDispatch();

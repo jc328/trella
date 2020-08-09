@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '/Users/johnchen/appAcademy/AppAcademy/16weekReactProject/trella/client/src/styles/landingPage.css'
 import { Button, TextField } from '@material-ui/core';
 import { NavLink } from 'react-router-dom'
@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 const splash = require('../assets/loginSplash.svg')
 
 function LandingPage () {
-
+  const [email, setEmail] = useState('')
 
 
   return (
@@ -43,11 +43,17 @@ function LandingPage () {
           variant="standard"
           label="Email"
           size="small"
-          // required="true"
+          onChange={(e) => {setEmail(e.target.value)} }
           ></TextField>
         </div>
         <div>
-          <NavLink to="/signup" style={{ textDecoration:"none"}}>
+          <NavLink
+          to={{
+            pathname:"/signup",
+            state:{ landingEmail: email }
+
+          }}
+          style={{ textDecoration:"none"}}>
           <Button variant="contained" color="primary" size="small" style={{ backgroundColor:"green", color:"white"}}>Sign Up - Its Free</Button>
           </NavLink>
         </div>
