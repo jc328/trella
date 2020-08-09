@@ -14,14 +14,18 @@ function Dashboard () {
   const cardData = useSelector(state => state.retrieveData)
   let { cardData:{ cardData: cards } } = cardData
   let { cardData:{ boardData: userId } } = cardData
+  let { cardData:{ listData: list_id } } = cardData
 
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(loadDashboard(userId[0].user_id))
+    // dispatch(loadDashboard(userId[0].user_id))
+    dispatch(loadDashboard(1))
   }
-  // if (cards) {
-  //   console.log('loadDash', cardData)
-  // }
+
+  if (cards) {
+    // console.log('cardData', cardData)
+    console.log('listData', list_id)
+  }
 
   return (
     <>

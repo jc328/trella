@@ -18,11 +18,10 @@ export default function InputForm({ setMenu }) {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    // dispatch(addCard(title, 4))
-    console.log(cardData)
+    dispatch(addCard(title, 4))
     // To test if we can update card list on click
-    // dispatch(loadDashboard(userId[0].user_id))
-    dispatch(loadDashboard(1))
+    dispatch(loadDashboard(userId[0].user_id))
+    // dispatch(loadDashboard(1))
   }
 
   return (
