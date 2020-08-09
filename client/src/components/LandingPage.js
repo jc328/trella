@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '/Users/johnchen/appAcademy/AppAcademy/16weekReactProject/trella/client/src/styles/landingPage.css'
 import { Button, TextField } from '@material-ui/core';
 import { NavLink } from 'react-router-dom'
+import logo from '../assets/textlogo2.png'
 
 const splash = require('../assets/loginSplash.svg')
 
@@ -14,7 +15,7 @@ function LandingPage () {
     <div id="landing_nav_container">
       <div className="landing_nav_items">
         <div>
-          <h2 id="nav_text">Trella</h2>
+          <img src={logo} alt="" style={{height:90, marginLeft:5}}/>
         </div>
         <div id="nav_buttons">
         <NavLink to="/login" style={{ textDecoration:"none"}}>

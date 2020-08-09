@@ -7,6 +7,7 @@ import InputCard from './InputCard';
 import { useSelector, useDispatch } from 'react-redux'
 import { loadDashboard } from '../store/dashboard';
 import Navbar from './Navbar';
+import Grow from '@material-ui/core/Grow';
 
 // *** REMOVE LOAD DATA BUTTON ***
 
@@ -49,9 +50,11 @@ function Dashboard () {
     <>
     <Navbar title={firstBoard.title}/>
     <div style={{display:"flex", justifyContent:"center"}}>
+
     {listArr.map((list, idx) => {
 
       return (
+        <Grow in={true} style={{ transformOrigin: '0 0 0' }}>
           <Paper
           className="dashboard_list"
           style={{backgroundColor:"#dddee2"}}
@@ -61,8 +64,11 @@ function Dashboard () {
             {cards.map((card, idx) => (card.list_id === list.id) ? <Card key={card.id} cardTitle={card.title} list_id={card.list_id}/>: null)}
             <InputCard list_id={list.id} />
           </Paper>
+        </Grow>
       )}
+
     )}
+
     </div>
     <Button variant="outlined" onClick={handleClick}>Load Data</Button>
     </>
