@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { signIn } from '../store/auth';
 import SignupElement from './SignupElement';
+import DemoButton from './DemoButton';
 
 function Login () {
   const [email, setEmail] = useState('');
@@ -48,9 +49,11 @@ function Login () {
             onChange={e => setPassword(e.target.value)}
             ></TextField>
             <Button type="submit" variant="contained" color="primary" size="small" style={{ backgroundColor:"white", color:"#366FC3"}}>Login</Button>
+
             <p>By Logging in, you confirm that you've read and accepted our Terms of Service and Privacy Policy.</p>
             </div>
           </form>
+          <DemoButton />
           <SignupElement />
 
       </div>
