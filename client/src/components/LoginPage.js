@@ -53,7 +53,7 @@ function Login () {
             <p>By Logging in, you confirm that you've read and accepted our Terms of Service and Privacy Policy.</p>
             </div>
           </form>
-          <DemoButton />
+          <DemoButton email={email} setEmail={setEmail} password={password} setPassword={setPassword} />
           <SignupElement />
 
       </div>
