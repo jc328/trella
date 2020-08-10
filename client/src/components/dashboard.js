@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, Paper } from '@material-ui/core'
+import { Paper } from '@material-ui/core'
 import '../styles/dashboard.css'
 import ListTitle from './ListTitle';
 import Card from './Card'
 import InputCard from './InputCard';
-import { useSelector, useDispatch } from 'react-redux'
-import { loadDashboard } from '../store/dashboard';
+import { useSelector } from 'react-redux'
+// import { loadDashboard } from '../store/dashboard';
 import Navbar from './Navbar';
 import Grow from '@material-ui/core/Grow';
 import {DragDropContext, Droppable} from 'react-beautiful-dnd'
@@ -32,11 +32,11 @@ function Dashboard () {
         listArr.push(x)
     }}}
 
-  const dispatch = useDispatch();
-  const handleClick = () => {
-    // dispatch(loadDashboard(userId[0].user_id))
-    dispatch(loadDashboard(2))
-  }
+  // const dispatch = useDispatch();
+  // const handleClick = () => {
+  //   // dispatch(loadDashboard(userId[0].user_id))
+  //   dispatch(loadDashboard(2))
+  // }
 
   // if (cards) {
   //   console.log('cardData', cards[0].id)
