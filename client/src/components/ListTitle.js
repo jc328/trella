@@ -12,7 +12,7 @@ export default function ListTitle({title}) {
       {menu ? (
         <div>
           <InputBase
-          value="Test"
+          value={title}
           className="input_Title"
           style={{
             backgroundColor:"lightgrey",

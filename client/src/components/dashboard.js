@@ -19,6 +19,8 @@ function Dashboard () {
   let { cardData:{ listData: list_id } } = cardData
   let { cardData:{ boardData: board_id } } = cardData
 
+
+  console.log(cardData)
   var firstBoard = ''
   let listArr = [];
 
@@ -88,7 +90,7 @@ function Dashboard () {
     )}
     </DragDropContext>
     </div>
-    <Button variant="outlined" onClick={handleClick}>Load Data</Button>
+    {/* <Button variant="outlined" onClick={handleClick}>Load Data</Button> */}
     </>
     )
   }

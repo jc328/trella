@@ -33,7 +33,6 @@ export default function DemoButton ({ email, setEmail, password, setPassword }) 
     // document.querySelector('.signIn').click()
   }
 
-
   return (
     <Button
     type="click"

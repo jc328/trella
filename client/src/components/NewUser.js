@@ -27,6 +27,7 @@ function NewUser (props) {
   if (!needSignIn) {
     return <Redirect to="/dashboard" />
   }
+  console.log(needSignIn)
 
   return (
     <>
