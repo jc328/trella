@@ -6,9 +6,9 @@ const database = db.database;
 const host = db.host;
 module.exports = {
   development: {
-    username,
-    password,
-    database,
+    username: 'trella',
+    password: 'test',
+    database: 'trellaapp',
     host,
     dialect: 'postgres',
     seederStorage: 'sequelize',
